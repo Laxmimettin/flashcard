@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0eaff, #f4e8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    color: #1e293b;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(31, 41, 55, 0.12);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #4338ca;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.progress-section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+.progress-bar {
+    height: 9px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    border-radius: 20px;
+    transition: width 0.35s ease;
+}
+
+.card-container {
+    height: 290px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flashcard {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.65s ease;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #059669, #0d9488);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    margin-bottom: 24px;
+}
+
+.card-face h2 {
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.card-back #answer {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.flip-hint {
+    font-size: 13px;
+    margin-top: 25px;
+    opacity: 0.8;
+}
+
+.card-counter {
+    margin: 20px 0;
+    font-weight: bold;
+    color: #64748b;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 18px;
+    background: #4f46e5;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+#flip-btn {
+    background: #059669;
+}
+
+#flip-btn:hover {
+    background: #047857;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 22px 16px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .card-container {
+        height: 280px;
+    }
+
+    .card-face h2 {
+        font-size: 21px;
+    }
+
+    .card-back #answer {
+        font-size: 17px;
+    }
+
+    button {
+        padding: 12px 14px;
+    }
+}

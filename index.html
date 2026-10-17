@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Learning App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>📚 Flashcard App</h1>
+            <p>Learn something new, one card at a time!</p>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-info">
+                <span>Learning Progress</span>
+                <span id="progress-text">1 / 10</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="card-container" id="card-container">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front">
+                    <span class="card-label">QUESTION</span>
+                    <h2 id="question">Loading question...</h2>
+                    <p class="flip-hint">Click the card to reveal the answer ↻</p>
+                </div>
+
+                <div class="card-face card-back">
+                    <span class="card-label">ANSWER</span>
+                    <p id="answer">Loading answer...</p>
+                    <p class="flip-hint">Click to see the question ↻</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="card-counter" id="card-counter">
+            Card 1 of 10
+        </p>
+
+        <div class="navigation">
+            <button id="prev-btn">← Previous</button>
+            <button id="flip-btn">Flip Card ↻</button>
+            <button id="next-btn">Next →</button>
+        </div>
+
+        <p class="footer">Keep learning. Keep growing. ✨</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
